@@ -127,14 +127,7 @@ gulp.task(
 // images optimising
 gulp.task("optimise-img", () => {
   return gulp
-    .src(img_src + "*.+(png|jpg|jpeg|gif|svg)")
-    .pipe(
-      cache(
-        imagemin({
-          interlaced: true
-        })
-      )
-    )
+    .src(img_src + "*")
     .pipe(gulp.dest(assets));
 });
 
