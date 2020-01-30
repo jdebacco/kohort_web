@@ -120,6 +120,10 @@ p {
 			padding-left:.8rem;
 		}
 	}
+
+	.navbar-toggler {
+		border-color:#FFF;
+	}
 }
 
 .nav-item {
@@ -623,6 +627,41 @@ footer {
 		}
 	}
 }
+
+.block-callout-alt {
+	padding:40px 0 0 0;
+
+	img.main {
+		margin-top:20px;
+	}
+}
+
+
+.block-screen {
+	padding:30px 0;
+
+	.row {
+		margin:50px 0;
+	}
+
+	a {
+		font-size:16px;
+		font-weight:400;
+	}
+}
+
+
+.device-container {
+
+	.mask {
+		margin: 0 8px 0 0;
+	}
+
+	.video-container {
+		margin:0 8px 0 0;
+	}
+}
+
 
 }
 
