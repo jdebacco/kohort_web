@@ -15,6 +15,8 @@ const pump = require("pump");
 const cleanCSS = require("gulp-clean-css");
 const imagemin = require("gulp-imagemin");
 const cache = require("gulp-cache");
+const fileinclude = require('gulp-file-include');
+
 sass.compiler = require("node-sass");
 
 // style paths
@@ -131,6 +133,19 @@ gulp.task("optimise-img", () => {
     .pipe(gulp.dest(assets));
 });
 
+gulp.task(
+  "fileinclude",
+  gulp.series(function(done) {
+  return  gulp.src(html_src)
+      .pipe(fileinclude({
+        prefix: '@@',
+        basepath: '@file'
+      }))
+      .pipe(gulp.dest(dist));
+      done()
+  })
+)
+
 // html files build
 gulp.task(
   "build-html",
@@ -143,13 +158,13 @@ gulp.task(
 // build and minify
 gulp.task(
   "build-compress",
-  gulp.parallel("build-html", "build-sass", "compress-js", "optimise-img")
+  gulp.parallel("fileinclude", "build-sass", "compress-js", "optimise-img")
 );
 
 // build files
 gulp.task(
   "build-all",
-  gulp.parallel("build-html", "build-sass", "bundle-js", "optimise-img")
+  gulp.parallel("fileinclude", "build-sass", "bundle-js", "optimise-img")
 );
 
 // clean previous build
@@ -177,7 +192,7 @@ gulp.task("watch", function(done) {
     "change",
     gulp.series(
       "clean-html",
-      "build-html",
+      "fileinclude",
       "update",
       "delete-assets",
       "optimise-img",
@@ -196,7 +211,10 @@ gulp.task(
   gulp.parallel("watch", () => {
     browserSync.init({
       server: {
-        baseDir: "./dist/"
+        baseDir: "./dist/",
+        serveStaticOptions: {
+            extensions: ['html']
+        }
       }
     });
   })
