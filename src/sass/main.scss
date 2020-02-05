@@ -32,6 +32,7 @@ body {
 	color: $color-black;
 	background: #FFF;
 	font-family: $font-family-montserrat;
+	margin-top:58px;
 }
 
 img {
@@ -118,6 +119,11 @@ p {
 		.nav-link {
 			padding-right:.8rem;
 			padding-left:.8rem;
+			color:#2D2D2D;
+
+			&.purple {
+				color:#7D30CC;
+			}
 		}
 	}
 
@@ -157,22 +163,39 @@ p {
 
 footer {
 	background-color:#202020;
-	padding:30px 0;
+	padding:20px 0;
 
-	img.logo {
-		width:120px;
+	.closer {
+		font-size:14px;
+		color:#B6B6B6;
+		font-weight:600;
+		margin-top:14px;
+		margin-bottom:0;
 	}
 
-	.subhdr {
-		font-size:16px;
-		color:#9D9D9D;
-		margin-top:20px;
+	.menu-items {
+		display:inline-block;
+		font-size:14px;
+		color:#7D7D7D;
+
+		a {
+			color:#7D7D7D;
+			margin-right:12px;
+			font-weight:300;
+
+			&:hover {
+				text-decoration:underline;
+				color:#B51D9E;
+			}
+		}
 	}
 
-	.lgl {
-		font-size:11px;
-		color:#9D9D9D;
-		margin-top:30px;
+	.social {
+		img {
+			width:30px;
+			margin-left:12px;
+			text-align:right;
+		}
 	}
 }
 
@@ -208,48 +231,15 @@ footer {
 	}
 }
 
-.block-appstores {
-	padding:20px 0;
-	background-color:#F0F0F0;
-
-	.getit {
-		display:inline-block;
-
-		p.title {
-			font-size:22px;
-			margin:0;
-			font-weight:600;
-			color:#404040;
-		}
-
-		p.subtitle {
-			font-size:14px;
-			margin:0;
-			color:#7D7D7D;
-		}
-
-	}
-
-	img.appstore-logo {
-		width:70px;
-		margin-right:12px;
-		float:left;
-	}
-
-	.badges {
-		display:inline-block;
-		float:right;
-
-		img {
-			width:160px;
-			margin-left:6px;
-		}
-	}
-}
 
 .block-highlight {
 	background:#FFF;
 	padding:60px 0;
+
+	img.main {
+		padding-right:70px;
+		padding-left:40px;
+	}
 }
 
 .block-highlight-alt {
@@ -302,7 +292,7 @@ footer {
 					padding:30px;
 					margin:20px;
 					border-radius:4px;
-					min-height:240px;
+					height:240px;
 
 					p {
 						font-size:16px;
@@ -477,7 +467,7 @@ footer {
 			color:#212529;
 			opacity:80%;
 			display:block;
-					}
+		}
 
 		.thanks {
 
@@ -502,11 +492,11 @@ footer {
 
 
 
-.block-feature {
+.block-feature-preview {
 	padding:80px 0;
 
 	&.alt {
-		background-color:#EAF8F1;
+		background-color:#F4F4F4;
 	}
 
 	.features {
@@ -517,7 +507,7 @@ footer {
 
 		h4 {
 			margin-top:12px;
-			font-size:20px;
+			font-size:18px;
 		}
 
 		p {
@@ -539,6 +529,32 @@ footer {
 	}
 }
 
+.block-longform {
+	padding:80px 0;
+
+	p {
+		font-size:16px;
+		line-height:24px;
+	}
+
+	li {
+		font-size:16px;
+		line-height:24px;
+		font-weight:300;
+		color:#606060;
+		margin-bottom:10px;
+	}
+
+	h4 {
+		margin-top:40px;
+		font-size:22px;
+
+		&.first {
+			margin-top:0;
+		}
+	}
+}
+
 
 .parallax {
 	/* The image used */
@@ -555,6 +571,89 @@ footer {
 }
 
 
+.block-appstores {
+	padding:30px 0;
+	background-color:#F0F0F0;
+
+	.getit {
+		display:inline-block;
+
+		p.title {
+			font-size:22px;
+			margin:0;
+			font-weight:600;
+			color:#404040;
+		}
+
+		p.subtitle {
+			font-size:14px;
+			margin:0;
+			color:#7D7D7D;
+		}
+
+	}
+
+	.appstore-logo {
+
+		img {
+			width:70px;
+			margin-right:12px;
+		}
+	}
+
+	.badges {
+		display:inline-block;
+
+		img {
+			width:160px;
+			margin-left:6px;
+		}
+	}
+}
+
+
+
+/* SECONDARY MASTHEADS */
+/* -------------------*/
+
+.pageheader-purple {
+	padding:120px 0 120px 0;
+	background: #d165db;
+	background-image: url("../assets/images/hexagons.svg"), linear-gradient(-45deg,#d165db 0,#3523b4 100%);
+	background-repeat:repeat-x;
+
+	h2 {
+		color:#FFF;
+		font-size:48px;
+	}
+
+	p {
+		color:#FFF;
+		font-size:22px;
+	}
+
+	.section {
+		font-size:14px;
+		font-weight:700;
+		text-transform:uppercase;
+		margin-bottom:20px;
+		color:#FFF;
+	}
+}
+
+
+
+/* FEATURES */
+/* -------------------*/
+
+
+
+
+
+
+
+
+/* ************ */
 @import "mobile";
 
 
